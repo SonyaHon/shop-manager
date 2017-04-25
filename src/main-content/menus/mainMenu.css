@@ -1,0 +1,49 @@
+.dinamic-content__menu {
+    visibility: hidden;
+    height: 50%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.dinamic-content__menu-buy {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dinamic-content__menu-buy p {
+    width: 100%;
+}
+
+.dinamic-content__menu-buy__buttons {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.dinamic-content__menu-buy__buttons button {
+    width: 60%;
+}
+
+.dinamic-content__menu-buy__submit-form {
+    height: 50%;
+    width: 100%;
+    display: flex;
+}
+
+.dinamic-content__menu-buy__items-list {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+}
+
+tr.table-row-needs-onhover:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.shop {
+    width: 30%;
+    height: 90%;
+}
+
+.shop_not_avalible {
+    opacity: 0.5;
+}
+
+.shop__body_n-label {
+    font-weight: bold;
+    font-size: xx-large;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop__body {
+
+}
