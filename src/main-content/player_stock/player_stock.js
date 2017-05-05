@@ -56,7 +56,7 @@ class Stock extends Component
 function mapStateToProps(state) {
 	return {
 		stock_size: state.user.stock_size,
-		stock_stored: state.user.stock_stored,
+		stock_stored: state.user.stock_stored + 0,
 		stored_items: state.user.stored_items
 	}
 }

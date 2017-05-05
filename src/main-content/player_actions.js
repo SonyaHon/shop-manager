@@ -73,7 +73,7 @@ class Actions extends Component {
 	borrowMenu() {
 		if(!this.props.menu.isMenuOpened) {
 			this.showMenu();
-			this.props.SetMenu(true, "borrow", false);
+			this.props.SetMenu(true, "borrow");
 		}
 		else if(this.props.menu.isMenuOpened && this.props.menu.menuType !== "none"  && this.props.menu.menuType !== "borrow") {
 			this.hideMenu(() => {

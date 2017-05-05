@@ -11,19 +11,19 @@ class Menu extends Component {
 	render() {
 		return (
 			<div className="dinamic-content__menu md-card">
-				{this.generateContent()}
+				{(this.generateContent.bind(this))()}
 			</div>
 		);
 	}
-	
+
 	generateContent() {
-		switch (this.props.menu.menuType) {
+		switch (this.props.menu) {
 			case "buy":
 				return <BuyMenu/>;
 			case "sell":
-				return <SellMenu/>
+				return <SellMenu/>;
 			case "borrow":
-				return <BorrowMenu/>
+				return <BorrowMenu/>;
 			default:
 				return null;
 		}
@@ -32,7 +32,8 @@ class Menu extends Component {
 
 function mapStateToProps(state) {
 	return {
-		menu: state.menu
+		menu: state.menu.menuType,
+		opened: state.menu.isMenuOpened
 	}
 }
 

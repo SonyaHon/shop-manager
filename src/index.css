@@ -43,6 +43,17 @@ button.md-normal-button:focus {
     outline: none;
 }
 
+button.md-flat-button {
+    background-color: inherit;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+button.button-red {
+    color: #ff1c26 !important;
+}
+
 .md-list {
     display: flex;
     flex-direction: column;

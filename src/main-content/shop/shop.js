@@ -11,7 +11,7 @@ class Shop extends Component {
 		super(props);
 		
 		this.state = {
-			isAvalible: false,
+			isBought: false,
 		}
 	}
 	
@@ -19,7 +19,7 @@ class Shop extends Component {
 		return (
 			<div className={"shop md-card "+owned_classname}>
 				<p className="md-card_header">Магазин: "{this.selectShopName()}"</p>
-				{this.state.isAvalible ? <div className="shop__body">
+				{this.state.isBought ? <div className="shop__body">
 				</div> : <div className="shop__body_n-label">Не доступно</div>}
 			</div>
 		);
@@ -34,20 +34,23 @@ class Shop extends Component {
 	
 	isOwned() {
 		this.setState({
-			isAvalible: false
+			isBought: false
 		});
 		owned_classname = "shop_not_avalible";
 		for(let i = 0; i < this.props.owned_shops.length; i++) {
-			if(this.props.shopId == this.props.owned_shops[i]) {
-				console.log('asd');
+			if(this.props.shopId == this.props.owned_shops[i].id) {
 				owned_classname = "";
 				this.setState({
-					isAvalible: true
+					isBought: true
 				});
 			}
 		}
 	}
-	
+
+	componentWillReceiveProps() {
+		this.isOwned();
+	}
+
 	componentWillMount() {
 		this.isOwned();
 	}

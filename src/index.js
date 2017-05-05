@@ -11,7 +11,8 @@ import './index.css';
 import App from './app';
 import reducers from './reducers/index.js';
 
-var store = createStore(reducers);
+
+var store = createStore(reducers,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>
