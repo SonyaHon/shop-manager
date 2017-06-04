@@ -27,8 +27,7 @@ class Shops extends Component {
                     Описание: {this.props.shop.story}
                 </div><br/>
                 <span className="items-submit-form_wrapper"><br/>
-                    <button className="md-flat-button" onClick={this.buyShop.bind(this)}>КУПИТЬ</button>
-                    <button className="md-flat-button button-red">ОТМЕНИТЬ</button>
+                    <button className="md-flat-button" style={{alignSelf: 'flex-end'}} onClick={this.buyShop.bind(this)}>КУПИТЬ</button>
                 </span><br/>
                 <span className="items-submit-form_wrapper" style={{justifyContent: "center"}}>
                     {this.state.errorMsg}
@@ -36,7 +35,7 @@ class Shops extends Component {
             </div>
         );
     }
-
+		
     buyShop() {
         if(this.state.isMounted) {
             if(this.props.user.money - this.props.shop.price >= 0) {
@@ -45,6 +44,11 @@ class Shops extends Component {
                 shopArr.push(this.props.shop);
                 this.props.changeUserProps('owned_shops', shopArr);
                 this.props.chnageShopAvalibility(this.props.shop.id);
+                this.setState((prevState) => {
+                	var state = prevState;
+                	prevState.errorMsg = "Purchased!";
+                	return state;
+								});
             }
         }
     }

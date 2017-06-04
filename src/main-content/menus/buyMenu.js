@@ -26,7 +26,7 @@ class Menu extends Component {
 						<div className="dinamic-content__menu-buy__buttons">
 							<button onClick={this.showItemsOptions.bind(this)} className="md-normal-button">Купить товары</button>
 							<button onClick={this.showShopsOptions.bind(this)} className="md-normal-button">Купить магазины</button>
-							<button className="md-normal-button">Купить улучшения</button>
+							<button onClick={this.showBorrowOptions.bind(this)} className="md-normal-button">Купить улучшения</button>
 						</div>
 						<div className="dinamic-content__menu-buy__submit-form">
 							{this.state.formComp}
@@ -53,7 +53,25 @@ class Menu extends Component {
 			</div>
 		);
 	}
-
+	
+	showBorrowOptions() {
+		if(this.state.isMounted) {
+			this.setState(() => {
+				return {
+					isMounted: true,
+					header: (
+						<tr>
+							<td style={{width: "70%"}}>Название</td>
+							<td style={{width: "30%"}}>Цена</td>
+						</tr>
+					),
+					tableBody: this.generateTBodyContent('upgrades'),
+					formComp: null
+				}
+			});
+		}
+	}
+	
     showShopsOptions() {
 		if(this.state.isMounted) {
 			this.setState(() => {

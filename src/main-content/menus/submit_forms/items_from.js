@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -42,7 +43,6 @@ class ItemsForm extends Component {
                 </span><br/>
                 <span className="items-submit-form_wrapper">
                     <button className="md-flat-button" onClick={(this.buyItems.bind(this))}>КУПИТЬ</button>
-                    <button className="md-flat-button button-red">ОТМЕНИТЬ</button>
                 </span>
                 <span className="items-submit-form_wrapper" style={{justifyContent: "center"}}>
                     {this.state.errorMsg}
@@ -50,7 +50,7 @@ class ItemsForm extends Component {
 			</div>
 		);
     }
-
+	
     buyItems() {
         if(this.state.isMounted) {
             let itemInfo = {};
